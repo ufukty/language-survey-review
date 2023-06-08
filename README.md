@@ -4,7 +4,7 @@
 
 ![](visualize/raw/output.png)
 
-## Normalized
+## Normalized (aka. Ratio)
 
 Normalized by dividing each language's picks to year totals (total picks amongst all languages for year)
 
@@ -16,7 +16,9 @@ Normalized by dividing each language's picks to year totals (total picks amongst
 
 ![](visualize/normalized/output-want.png)
 
-## Δ% (Change in percentage)
+## Δ% (Change in ratio)
+
+![](visualize/delta/output.png)
 
 ## Bonus: Have(t) vs. Want(t-1)
 
