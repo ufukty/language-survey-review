@@ -32,6 +32,22 @@ separators = {
     "2022": ";",
 }
 
+translate = {
+    "COBOL": "Cobol",
+    "MATLAB": "Matlab",
+    "OCaml": "Ocaml",
+    "Delphi": "Delphi/Object Pascal",
+}
+
+exclude = [
+    "Bash/Shell",
+    "Bash/Shell/PowerShell",
+    "PowerShell",
+    "HTML",
+    "HTML/CSS",
+    "Other(s):",
+]
+
 
 def clearNewFormatInputFile(year: int):
     dataset = {
@@ -41,13 +57,6 @@ def clearNewFormatInputFile(year: int):
     
     with open(f"data/{year}.csv", newline='\n') as input:
         reader = csv.reader(input, delimiter=',')
-        
-        # for row in reader:
-        #     j = 0
-        #     for column in row:
-        #         print(j, column)
-        #         j += 1
-        #     break
         
         next(reader) # skip header
         
@@ -66,9 +75,19 @@ def clearNewFormatInputFile(year: int):
                         dataset["want"][lang] = 0
                     dataset["want"][lang] += 1
     
+    for key in ["want", "have"]:
+        for lang, picks in list(dataset[key].items()):
+            if lang in exclude:
+                dataset[key].pop(lang)
+            
+            if lang in translate:
+                dataset[key][translate[lang]] = picks
+                dataset[key].pop(lang)
+    
     with open(f"clean/{year}.json", "w") as output:
         json.dump(dataset, output)
 
 
 for year in range(2017, 2023):
+    print("starting ", year)
     clearNewFormatInputFile(year)

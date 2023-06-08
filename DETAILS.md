@@ -25,64 +25,69 @@ Languages that not shown below are ignored.
 $ find clean -type f | while read FILE; do
     cat "$FILE" | jq -r '.[] | to_entries[] | .key';
 done | sort | uniq > all_langs.txt
-
-$ cat all_langs.txt
-APL
-Assembly
-Bash/Shell
-Bash/Shell/PowerShell
-C
-C#
-C++
-COBOL
-CSS
-Clojure
-Cobol
-CoffeeScript
-Common Lisp
-Crystal
-Dart
-Delphi
-Delphi/Object Pascal
-Elixir
-Erlang
-F#
-Fortran
-Go
-Groovy
-HTML
-HTML/CSS
-Hack
-Haskell
-Java
-JavaScript
-Julia
-Kotlin
-LISP
-Lua
-MATLAB
-Matlab
-Node.js
-OCaml
-Objective-C
-Ocaml
-Other(s):
-PHP
-Perl
-PowerShell
-Python
-R
-Ruby
-Rust
-SAS
-SQL
-Scala
-Smalltalk
-Solidity
-Swift
-TypeScript
-VB.NET
-VBA
-Visual Basic 6
-WebAssembly
 ```
+
+| Input                 | Output               |
+| --------------------- | -------------------- |
+| APL                   |                      |
+| Assembly              |                      |
+| Bash/Shell            | x                    |
+| Bash/Shell/PowerShell | x                    |
+| C                     |                      |
+| C#                    |                      |
+| C++                   |                      |
+| COBOL                 | Cobol                |
+| CSS                   |                      |
+| Clojure               |                      |
+| Cobol                 |                      |
+| CoffeeScript          |                      |
+| Common Lisp           |                      |
+| Crystal               |                      |
+| Dart                  |                      |
+| Delphi                | Delphi/Object Pascal |
+| Delphi/Object Pascal  | x                    |
+| Elixir                |                      |
+| Erlang                |                      |
+| F#                    |                      |
+| Fortran               |                      |
+| Go                    |                      |
+| Groovy                |                      |
+| HTML                  | x                    |
+| HTML/CSS              | x                    |
+| Hack                  |                      |
+| Haskell               |                      |
+| Java                  |                      |
+| JavaScript            |                      |
+| Julia                 |                      |
+| Kotlin                |                      |
+| LISP                  |                      |
+| Lua                   |                      |
+| MATLAB                | Matlab               |
+| Matlab                |                      |
+| Node.js               |                      |
+| OCaml                 | Ocaml                |
+| Objective-C           |                      |
+| Ocaml                 |                      |
+| Other(s):             | x                    |
+| PHP                   |                      |
+| Perl                  |                      |
+| PowerShell            | x                    |
+| Python                |                      |
+| R                     |                      |
+| Ruby                  |                      |
+| Rust                  |                      |
+| SAS                   |                      |
+| SQL                   |                      |
+| Scala                 |                      |
+| Smalltalk             |                      |
+| Solidity              |                      |
+| Swift                 |                      |
+| TypeScript            |                      |
+| VB.NET                |                      |
+| VBA                   | VB.NET               |
+| Visual Basic 6        |                      |
+| WebAssembly           |                      |
+
+## Process
+
+###
