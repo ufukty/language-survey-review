@@ -1,11 +1,10 @@
 # YoY review of HaveWorkedLanguage and WantWorkLanguage results of StackOverflow Surveys (2017-2022)
 
-
 ## Raw
 
 ![](visualize/raw/output.png)
 
-## Normalized 
+## Normalized
 
 Normalized by dividing each language's picks to year totals (total picks amongst all languages for year)
 
@@ -16,3 +15,11 @@ Normalized by dividing each language's picks to year totals (total picks amongst
 ### Want
 
 ![](visualize/normalized/output-want.png)
+
+## Δ% (Change in percentage)
+
+## Bonus: Have(t) vs. Want(t-1)
+
+Comparing previous year's "want"s with the year's "have"
+
+![](visualize/want-vs-have/output.png)
