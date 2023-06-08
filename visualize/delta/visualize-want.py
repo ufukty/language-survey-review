@@ -69,27 +69,10 @@ colors = {
     "WebAssembly": "#654FF0",
     "PowerShell": "#012456",
 }
-y_pos = {k: 0 for k in dataset}
-y_pos["TypeScript"] = 1 * -0.002 + 0.02
-y_pos["SQL"] = 2 * -0.002 + 0.02
-y_pos["JavaScript"] = 3 * -0.002 + 0.02
-y_pos["Rust"] = 4 * -0.002 + 0.02
-y_pos["Python"] = 5 * -0.002 + 0.02
-y_pos["Go"] = 6 * -0.002 + 0.02
-y_pos["C#"] = 7 * -0.002 + 0.02
-y_pos["Assembly"] = 8 * -0.002 + 0.02
-y_pos["Scala"] = 9 * -0.002 + 0.02
-y_pos["Swift"] = 10 * -0.002 + 0.02
-y_pos["VBA"] = 11 * -0.002 + 0.02
-y_pos["PHP"] = 12 * -0.002 + 0.02
-y_pos["R"] = 13 * -0.002 + 0.02
-y_pos["Objective-C"] = 14 * -0.002 + 0.02
-y_pos["Ruby"] = 15 * -0.002 + 0.02
-y_pos["Java"] = 16 * -0.002 + 0.02
-y_pos["C++"] = 17 * -0.002 + 0.02
-y_pos["C"] = 18 * -0.002 + 0.02
+keysOrdered = sorted(dataset["want"], key=lambda lang: dataset["want"][lang][-1], reverse=True)
+y_pos = {key: i * -0.002 + 0.018 for i, key in enumerate(keysOrdered)}
 
-for lang, series in dataset.items():
+for lang, series in dataset["want"].items():
     line, = ax.plot(range(2018, 2023), series, lw=2.5, color=colors[lang])
     ax.text(
         2022.1,
@@ -119,7 +102,7 @@ fig.suptitle("Δ(Languages I want to work next year / total picks for year)", ha
 plt.ylabel('Difference with previous year')
 plt.xlabel('Survey years')
 plt.savefig(
-    fname="visualize/delta/output.png",
+    fname="visualize/delta/output-want.png",
     dpi=300,
     format=None,
     metadata=None,

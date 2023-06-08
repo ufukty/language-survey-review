@@ -18,7 +18,13 @@ Normalized by dividing each language's picks to year totals (total picks amongst
 
 ## Δ% (Change in ratio)
 
-![](visualize/delta/output.png)
+### Have
+
+![](visualize/delta/output-have.png)
+
+### Want
+
+![](visualize/delta/output-want.png)
 
 ## Bonus: Have(t) vs. Want(t-1)
 
