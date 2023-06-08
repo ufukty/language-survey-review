@@ -2,14 +2,16 @@ clear:
 	python clear-1st-step.py
 	python clear-2nd-step.py
 	
-visualize:
+visualize/raw:
 	python visualize/raw/visualize.py
 
-normalized:
+
+visualize/normalized:
 	python visualize/normalized/normalize.py
-	python visualize/normalized/visualize.py
+	python visualize/normalized/visualize-want.py
+	python visualize/normalized/visualize-have.py
 
 all:
 	clear
-	visualize
-	normalized
+	visualize/raw
+	visualize/normalized
