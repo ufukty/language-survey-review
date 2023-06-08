@@ -117,7 +117,7 @@ ax.tick_params(
 )
 fig.suptitle("Languages I worked last year", ha="center")
 plt.ylabel('Pick')
-plt.xlabel('Years')
+plt.xlabel('Survey years')
 plt.savefig(
     fname="visualize/raw/output.png",
     dpi=300,

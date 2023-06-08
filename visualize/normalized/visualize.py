@@ -70,21 +70,21 @@ colors = {
     "PowerShell": "#012456",
 }
 label_offsets_vertical = {k: 0.5 for k in dataset["have"]}
-# label_offsets_vertical["SQL"] += 0.5
-# label_offsets_vertical["Python"] += -3.5
-# label_offsets_vertical["Java"] += -3.5
-# label_offsets_vertical["PHP"] += -2.5
-# label_offsets_vertical["C"] += -6.5
-# label_offsets_vertical["Go"] += 14
-# label_offsets_vertical["Rust"] += 12
-# label_offsets_vertical["Ruby"] += 14
+label_offsets_vertical["SQL"] += 0.5
+label_offsets_vertical["Python"] += -3.5
+label_offsets_vertical["Java"] += -3.5
+label_offsets_vertical["PHP"] += -2.5
+label_offsets_vertical["C"] += -6.5
+label_offsets_vertical["Go"] += 14
+label_offsets_vertical["Rust"] += 12
+label_offsets_vertical["Ruby"] += 14
 
-# label_offsets_vertical["Assembly"] += 7
-# label_offsets_vertical["Swift"] += 2
-# label_offsets_vertical["R"] += -6
-# label_offsets_vertical["VBA"] += -15
-# label_offsets_vertical["Scala"] += -14
-# label_offsets_vertical["Objective-C"] += -20
+label_offsets_vertical["Assembly"] += 7
+label_offsets_vertical["Swift"] += 2
+label_offsets_vertical["R"] += -6
+label_offsets_vertical["VBA"] += -15
+label_offsets_vertical["Scala"] += -14
+label_offsets_vertical["Objective-C"] += -20
 
 for lang, series in dataset["have"].items():
     line, = ax.plot(range(2017, 2023), series, lw=2.5, color=colors[lang])
@@ -117,9 +117,9 @@ ax.tick_params(
     right=False,
     labelleft=True
 )
-fig.suptitle("Languages I worked last year / year total", ha="center")
-plt.ylabel('Pick')
-plt.xlabel('Years')
+fig.suptitle("Languages I worked last year / total picks for year", ha="center")
+plt.ylabel('Language / total picks for year')
+plt.xlabel('Survey years')
 plt.savefig(
     fname="visualize/normalized/output.png",
     dpi=300,
