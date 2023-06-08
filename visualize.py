@@ -1,6 +1,12 @@
 import os
+import json
 import matplotlib.pyplot as plt
 import matplotlib.transforms as mtransforms
+
+dataset = {}
+
+with open(f"product/clean-2/raw.json") as input:
+    dataset = json.load(input)
 
 fig, ax = plt.subplots(1, 1, figsize=(8, 6), layout='constrained')
 
@@ -62,7 +68,7 @@ colors = {
     "WebAssembly": "#654FF0",
     "PowerShell": "#012456",
 }
-label_offsets_vertical = {k: 0.5 for k in seriesRaw["have"]}
+label_offsets_vertical = {k: 0.5 for k in dataset["have"]}
 label_offsets_vertical["SQL"] += 0.5
 label_offsets_vertical["Python"] += -3.5
 label_offsets_vertical["Java"] += -3.5
@@ -79,7 +85,7 @@ label_offsets_vertical["VBA"] += -15
 label_offsets_vertical["Scala"] += -14
 label_offsets_vertical["Objective-C"] += -20
 
-for lang, series in seriesRaw["have"].items():
+for lang, series in dataset["have"].items():
     line, = ax.plot(range(2017, 2023), series, lw=2.5, color=colors[lang])
     y_pos = series[-1]
     offset = label_offsets_vertical[lang] / 72
