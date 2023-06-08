@@ -2,7 +2,7 @@ import csv
 import json
 import os
 
-os.makedirs("clean", 0o711, True)
+os.makedirs("product/clean-1", 0o711, True)
 
 columnIndexes = {
     "have": {
@@ -44,18 +44,21 @@ exclude = [
     "Bash/Shell/PowerShell",
     "PowerShell",
     "HTML",
+    "CSS",
     "HTML/CSS",
     "Other(s):",
 ]
 
 
 def clearNewFormatInputFile(year: int):
+    
     dataset = {
         "have": {},
         "want": {}
     }
     
     with open(f"data/{year}.csv", newline='\n') as input:
+        
         reader = csv.reader(input, delimiter=',')
         
         next(reader) # skip header
@@ -84,7 +87,7 @@ def clearNewFormatInputFile(year: int):
                 dataset[key][translate[lang]] = picks
                 dataset[key].pop(lang)
     
-    with open(f"clean/{year}.json", "w") as output:
+    with open(f"product/clean-1/{year}.json", "w") as output:
         json.dump(dataset, output)
 
 
