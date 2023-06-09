@@ -4,7 +4,7 @@
 
 ![](visualize/raw/output.png)
 
-## Normalized (aka. Ratio)
+## Normalized ("Ratio")
 
 Normalized by dividing each language's picks to year totals (total picks amongst all languages for year)
 
